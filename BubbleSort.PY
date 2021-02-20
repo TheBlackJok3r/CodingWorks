@@ -1,9 +1,8 @@
-from random import seed
+from random import random
 from random import randint
 
 n=100
 A=[]
-seed(1)
 
 
 def RandTab():
