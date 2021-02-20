@@ -24,7 +24,20 @@ def BubbleSort2():
             if A[j]>A[j+1]:
                 A[j],A[j+1] = A[j+1],A[j]
 
+def BubbleSort3():
+    didSwap = False
+    for i in range(n):
+        for j in range(n-1-i):
+            if A[j]>A[j+1]:
+                A[j],A[j+1] = A[j+1],A[j]
+                didSwap=True
+        if didSwap == False:
+            break
+
+
+
+
 RandTab()
 print(A)
-BubbleSort2()
+BubbleSort3()
 print(A)
