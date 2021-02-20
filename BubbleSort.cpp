@@ -92,7 +92,7 @@ void BubbleSort2()
     }
 }
 
-void BubbleSort3()
+void AlaBubbleSort3()
 {
   int first=0, firsttemp, last=n-1, lasttemp;
     for (int i=0; i<(n-1)/2; i++)
@@ -122,6 +122,27 @@ void BubbleSort3()
     }   
 }
 
+
+void BubbleSort3()
+{
+  int d=1, first=0, last=n-2, lasttemp;
+  for (int i=0; i<(n-1); i++)
+    {
+        for(int j=first; j!=last+d; j=j+d)
+        {
+            if(A[j]>A[j+1])
+            {
+              lasttemp=j;
+              swap(A[j],A[j+1]);
+            } //Wykonywanych maksymalnie n niepotrzebnych porównań przez zwrot j+1, natomiast gdy uzależnię to od d, wychodzi całkiem zabawna rzecz. Na razie nie mam pomysłu na naprawę tego.
+        }
+
+        last=lasttemp;
+        d=d*-1;
+        swap(first,last);
+    }   
+}
+
 int main() {
 
   RandGen();
@@ -132,5 +153,4 @@ int main() {
   cout << endl;
   BubbleSort3();
   ShowTab();
-  // :)
 }
