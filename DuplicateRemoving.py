@@ -31,7 +31,7 @@ def RemoveDuplicates():
     k=0
     B=[]
     while i<n-k:
-        j=i+1
+        j=i
         while j<n-k:
             if A[i]==A[j]:
                 A.remove(A[j])
