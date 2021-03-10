@@ -8,20 +8,22 @@ def RandTab():
     for _ in range(n):
         A.append(randint(0,1000))
 
-def Split():
-    j=0
+def Split(A):
+    start=0
+    end=n-1
+    pivot=A[randint(start,end)]
+    print(pivot)
     i=0
-    global A
-    B=[]
-    while i!=n:
-        if(A[i]<A[j]):
-            B.insert(0,A[i])
-        else:
-            B.append(A[i])
-        i+=1
-    A=B
+    while start<end:
+        print(start,end)
+        if A[start]<=pivot:
+            start+=1
+        if A[end]>pivot:
+            end-=1
+        if A[end]<=pivot and A[start]>pivot:
+            A[start],A[end]=A[end],A[start]
 
 RandTab()
 print(A)
-Split()
+Split(A)
 print(A)
