@@ -19,24 +19,24 @@ function letters(letter, word)
     return ret
 }
 
-function ToDash(train)
+function ToDash(chain)
 {
     i=0
     k=0
     ret=0
-    while(i<train.length)
+    while(i<chain.length)
     {
-        if(train[i]=='-')
+        if(chain[i]=='-')
             break
         else
         {
             if(k==0)
             {
-                ret=train[i]
+                ret=chain[i]
             }
             else
             {
-                ret=ret+train[i]
+                ret=ret+chain[i]
             }
             k+=1
         }
@@ -46,24 +46,24 @@ function ToDash(train)
 }
 
 
-function AfterDash(train)
+function AfterDash(chain)
 {
-    i=train.length-1
+    i=chain.length-1
     k=0
     ret=0
     while(i>0)
     {
-        if(train[i]=='-')
+        if(chain[i]=='-')
             break
         else
         {
             if(k==0)
             {
-                ret=train[i]
+                ret=chain[i]
             }
             else
             {
-                ret=train[i]+ret
+                ret=chain[i]+ret
             }
             k+=1
         }
