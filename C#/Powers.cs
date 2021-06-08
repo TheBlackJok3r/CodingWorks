@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace C__projects
 {
@@ -18,11 +18,10 @@ namespace C__projects
             {
                 return pow(power / 2, num) * pow(power / 2, num);
             }
-            else if (power % 3 == 0)
+            else
             {
-                return pow((power - 1) / 2, num) * pow((power - 1) / 2, num) * num;
+                return pow(power - 1, num) * num;
             }
-            return 0;
         }
         static void Main(string[] args)
         {
