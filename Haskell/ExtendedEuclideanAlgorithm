@@ -1,5 +1,0 @@
-gcdExt a b = if b == 0 
-then (abs a, (if a>0 then 1 else -1), 0)
-else let (r, x, y) = gcdExt b (a `mod` b) in (r, y, x - a `div` b * y)
-main :: IO ()
-main = return ()
