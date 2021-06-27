@@ -1,17 +1,15 @@
 def l(highestNum, A):
 	#creates list to cover all postions in graph
-	for _ in range(highestNum+1):
+	for _ in range(highestNum):
 		A.append([])
 	return A
 
 def data(text, A):
 	#Appends data on proper positions
-	for i in text:
+	for i in range(len(text)):
 		try:
-			x = i.split('.')
-			for j in x[1].split(','):
-				if not int(j) in A[int(x[0])]:
-					A[int(x[0])].append(int(j))
+			for j in text[i].split(","):
+				A[i].append(int(j))
 		except:
 			pass
 	return A
@@ -52,7 +50,7 @@ def path(A, start=None, B=[]):
 	if start == None:
 		start = findOdd(A)
 
-
+	print(A)
 	if emptyTab(A) == True:
 		return B
 	try:
@@ -75,11 +73,8 @@ def Euler():
 	A=[]
 	highestNum=0
 	with open('Euler.txt') as file:
-		text = file.read().split(' ')
-		for i in text:
-			x = int(i.split('.')[0])
-			if x>highestNum:
-				highestNum=x
+		text = file.read().split('\n')
+		highestNum = len(text)
 
 		A=l(highestNum, A)
 		A=data(text, A)
