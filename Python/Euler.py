@@ -50,7 +50,6 @@ def path(A, start=None, B=[]):
 	if start == None:
 		start = findOdd(A)
 
-	print(A)
 	if emptyTab(A) == True:
 		return B
 	try:
