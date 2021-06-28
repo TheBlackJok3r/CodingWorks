@@ -1,6 +1,3 @@
-from random import paretovariate
-
-
 import math
 
 
