@@ -45,11 +45,13 @@ def findOdd(A):
 	return ret
 		
 
-def path(A, start=None, B=[]):
+def path(A, start=None, B=[], start_vertex=None):
 	#returns valid Euler's cycle path, or gives information if there isn't one
 	if start == None:
 		start = findOdd(A)
+		start_vertex = start
 
+	print(A)
 	if emptyTab(A) == True:
 		return B
 	try:
@@ -62,10 +64,14 @@ def path(A, start=None, B=[]):
 	except:
 		return "This graph isn't Euler's cycle"
 
-	if emptyTab(A) == True:
-		return f"This is Euler's cycle and the path is: {B}"
+	if emptyTab(A):
+		if B[0][0] == B[len(B)-1][len(B[len(B)-1])-1]:
+			return f"This is Euler's graph and the curcuit is: {B}"
+		else:
+			return f"This is semi-Euler's graph and the path is: {B}"
 	else:
-		return "This graph isn't Euler's cycle"
+		return "This isn't Euler's or semi-Euler's graph"
+
 
 
 def Euler():
