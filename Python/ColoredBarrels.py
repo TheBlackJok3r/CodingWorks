@@ -28,7 +28,10 @@ def barrels(pattern, acc=0):
 def main():
     with open('Python/coloredBarrels.txt') as file:
         text = file.read().split(' ')
-        print(barrels(text))
+        try:
+            print(barrels(text))
+        except:
+            print('There is no possible sorting result of this data')
 
 
 main()
